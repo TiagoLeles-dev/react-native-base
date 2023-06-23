@@ -1,9 +1,9 @@
 # react-native-base
 
-### Part 1.2 - Create Components
+### Part 1 - Create Components
 let's dive into some hands-on practice! 💪 We're going to create two components that we can use directly in our App.js file. In the future, we'll create navigation and screens for different parts of the app. The first component will be a header bar, complete with a title . The second component will be a card 🃏, which will have an image , a title , and some text. With these components, we'll be one step closer to building our awesome app! Let's get coding! 💻😄
 
-### Part 1.3 - Navigation Install and config
+### Part 2 - Navigation Install and config
 Let's dive into one of the most important parts of mobile development: navigation! In React Native, there's no built-in tool for screen navigation, but fear not, the documentation suggests using React Navigation. 🚀
 
 There are three main types of navigation:
@@ -17,3 +17,9 @@ Firts [Instalation](https://reactnavigation.org/docs/getting-started) Docs.
 
 After following all the instalation steps, follow this link [Stack Docs](https://reactnavigation.org/docs/stack-navigator/) to create and config a new Stack for your app.
 
+### Part 3 - List components
+When it comes to displaying information, lists are widely used in both web and mobile development. In React Native, there are multiple ways to create a list, but let's focus on two popular approaches.
+
+The first and simplest method is using the .map function to generate a component for each item in an array, wrapped in a ScrollView. This approach works well for small lists with limited data in each item.
+
+For larger lists with more data, React Native provides a native component called FlatList. This component leverages the operating system's capabilities to efficiently manage the list, loading and rendering only the necessary data as it becomes visible. This optimizes performance, allowing the app to handle large lists seamlessly. Check out the documentation here for more details and usage examples. 📜📋✨
