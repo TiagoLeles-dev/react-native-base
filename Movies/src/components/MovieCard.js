@@ -25,7 +25,7 @@ export const MovieCard = ({movie}) => {
 const styles = StyleSheet.create({
   container: {
     marginVertical: 15,
-    maxWidth: '80%',
+    marginHorizontal: 50,
     padding: 0,
     flexDirection: 'column',
     borderColor: 'blue',
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     justifyContent: 'center',
+    minHeight: 100,
     maxHeight: 200,
     borderTopLeftRadius: 12,
     borderTopRightRadius: 12,
