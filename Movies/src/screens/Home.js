@@ -48,6 +48,11 @@ export const HomeScreen = ({navigation}) => {
               style={styles.button}
               onPress={() => navigation.navigate('NavigationDetails')}
             />
+            <Button
+              title="Flatlist Example"
+              style={styles.button}
+              onPress={() => navigation.navigate('MovieFlatlist')}
+            />
           </View>
         </ScrollView>
       </View>

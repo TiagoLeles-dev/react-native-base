@@ -2,20 +2,21 @@ import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 
 export const MovieCard = ({movie}) => {
-  const {title, image, details} = movie;
+  const {title, image, details, overview, poster_path} = movie;
+  const imagePath = `https://image.tmdb.org/t/p/original${poster_path}`;
 
   return (
     <View style={styles.container}>
       <Image
         style={styles.image}
         source={{
-          uri: image,
+          uri: image || imagePath,
         }}
       />
       <View style={styles.Viewtitle}>
         <Text style={styles.title}>{title}</Text>
         <Text numberOfLines={3} style={styles.text}>
-          {details}
+          {details || overview}
         </Text>
       </View>
     </View>
@@ -49,8 +50,8 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     justifyContent: 'center',
-    minHeight: 100,
-    maxHeight: 200,
+    minHeight: 150,
+    maxHeight: 300,
     borderTopLeftRadius: 12,
     borderTopRightRadius: 12,
   },

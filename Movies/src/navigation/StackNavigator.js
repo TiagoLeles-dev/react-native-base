@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import {HomeScreen} from '../screens/Home';
 import {NavigationDetailsScreen} from '../screens/NavDetails';
+import MovieFlatlist from '../screens/MovieFlatlist';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,11 @@ const MainStackNavigator = () => {
       <Stack.Screen
         name="NavigationDetails"
         component={NavigationDetailsScreen}
+        options={{headerShown: true}}
+      />
+      <Stack.Screen
+        name="MovieFlatlist"
+        component={MovieFlatlist}
         options={{headerShown: true}}
       />
       {/* <Stack.Screen
