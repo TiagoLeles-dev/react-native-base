@@ -24,7 +24,7 @@ Under the hood, it uses a special bridge to communicate between JavaScript and t
 ### The official documentation
 There is no better way to get started in React native than the official documentation. [Here](https://reactnative.dev/docs/0.71/getting-started) you will find a brief description of the main concepts as well as some examples where you can change the code and see what it does in real-time. The goal here is for you to explore and get into React Native.
 
-### (BONUS)The Beginner's Guide to React
+### (BONUS) The Beginner's Guide to React
 Since React Native is built on top of React JS, it's helpful to have some knowledge of React if you're new to both. Don't worry, though, they're not exactly the same! Here's a free React course that covers essential concepts shared by React and React Native. It's important to note that while they share some similarities, they have distinct differences in their usage and implementation. So, feel free to explore the course to grasp the core concepts, but don't stress about becoming an expert in React if your focus is on React Native. Happy learning! 📚🎓🚀
 
  [The Beginner's Guide to React](https://egghead.io/courses/the-beginner-s-guide-to-react). It is a 28-part course with short lessons where you'll learn many interesting things like how to:
@@ -119,31 +119,17 @@ To implement tab navigation, we'll make use of a popular library called React Na
 
 Let's enhance our app's navigation and provide a more user-friendly experience with tab navigation! 🚀🔖📲
 
-<s>
-#### 1. Request an API key
+
+#### Request an API key
 The API is free and available for everyone to use but to make a request you need to create a user account and then [request an API key](https://www.themoviedb.org/settings/api).
 
-### Adding some spice 🌶️
 
-#### 1. Add more search options
-Create one seach input to allow the user to search by TV shows, movies, or people using this endpoint: https://developers.themoviedb.org/3/search/multi-search.
-
-After clicking the search button — and if there is something to search for —, the user should be redirected to another page where the search results will appear (5 for each category is enough).
-
-#### 2. TV Show page
-This is the page for the TV Show. Here you can use the URL params to get the TV show ID and show the following:
-* Details: https://developers.themoviedb.org/3/tv/get-tv-details
-* Credits: https://developers.themoviedb.org/3/tv-seasons/get-tv-season-aggregate-credits
-
-#### 3. Movie page
-Add the credits information to the already built Movie page using the following endpoint:
-* Credits: https://developers.themoviedb.org/3/movies/get-movie-credits
-
-#### 4. Person page
-This is the page for a person. Here you can use the URL params to get the person ID and show the following:
-* Details https://developers.themoviedb.org/3/people/get-person-details
-* TV shows: https://developers.themoviedb.org/3/people/get-person-tv-credits
-* Movies: https://developers.themoviedb.org/3/people/get-person-movie-credits
+| **Adding some spice 🌶️**                                                                                                                                                                                                                                                                                                                                               |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| #### 1. Add more search options Create one seach input to allow the user to search by TV shows, movies, or people using this endpoint: https://developers.themoviedb.org/3/search/multi-search.  After clicking the search button — and if there is something to search for —, the user should be redirected to another page where the search re                      |
+| #### 2. TV Show page This is the page for the TV Show. Here you can use the URL params to get the TV show ID and show the following: *  Details: https://developers.themoviedb.org/3/tv/get-tv-details *  Credits: https://developers.themoviedb.org/3/tv-seasons/get-tv-season-aggregate-credits                                                                     |
+| #### 3. Movie page Add the credits information to the already built Movie page using the following endpoint: *  Credits: https://developers.themoviedb.org/3/movies/get-movie-credits                                                                                                                                                                                 |
+| #### 4. Person page This is the page for a person. Here you can use the URL params to get the person ID and show the following: *  Details https://developers.themoviedb.org/3/people/get-person-details *  TV shows: https://developers.themoviedb.org/3/people/get-person-tv-credits *  Movies: https://developers.themoviedb.org/3/people/get-person-movie-credits |
 
 ### 🌟 Bonus
 If you found the previous steps too easy and want an extra challenge, why not take it a step further and build and deploy your app? This will give you a chance to showcase your skills and share your creation with others. So go ahead, unleash your creativity, and let your app shine! 🚀
