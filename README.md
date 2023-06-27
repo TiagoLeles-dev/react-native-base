@@ -119,6 +119,36 @@ To implement tab navigation, we'll make use of a popular library called React Na
 
 Let's enhance our app's navigation and provide a more user-friendly experience with tab navigation! 🚀🔖📲
 
+### Part 5 - Icons
+
+🎨 Icons in React Native
+In both web and mobile development, icons play a crucial role in conveying information quickly and efficiently to users. While React Native doesn't come with a built-in icon library, you can leverage community-driven solutions. One of the most popular and widely used libraries is "react-native-vector-icons," available on npm [link](https://www.npmjs.com/package/react-native-vector-icons).
+
+To use this library, you'll need to follow a specific installation process. We'll use the following [tutorial](https://aboutreact.com/react-native-vector-icons/) as a reference: React Native Vector Icons Tutorial
+
+Here are the steps involved:
+
+- Install via npm
+- Run Pod install
+- Configure Android (add the "apply from ..." line to the gradle file)
+- Configure iOS (add the necessary entries to the info.plist file)
+- npx react-native start
+- npx react-native run-android
+    or
+- npx react-native run-ios
+
+By following these steps, you'll be able to incorporate a wide range of icons into your React Native projects and enhance the visual appeal and usability of your app. Let's use some icons! [List of icons](https://oblador.github.io/react-native-vector-icons/) 😄🚀
+
+```
+// Replace the for the /name of the icon font on the list
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
+...
+inside the render
+...
+
+<MaterialCommunityIcons name={'movie-open'} size={22} color={'blue'} />```
+
 
 #### Request an API key
 The API is free and available for everyone to use but to make a request you need to create a user account and then [request an API key](https://www.themoviedb.org/settings/api).
