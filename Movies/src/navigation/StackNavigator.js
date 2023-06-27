@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {HomeScreen} from '../screens/Home';
 import {NavigationDetailsScreen} from '../screens/NavDetails';
 import MovieFlatlist from '../screens/MovieFlatlist';
+import TabNavigator from './TabNavigator';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,11 @@ const MainStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={headerOptions}>
       <Stack.Screen
+        name="Movies App"
+        component={TabNavigator}
+        options={{headerShown: true}}
+      />
+      <Stack.Screen
         name="Home"
         component={HomeScreen}
         options={{headerShown: true}}
@@ -35,16 +41,6 @@ const MainStackNavigator = () => {
         component={MovieFlatlist}
         options={{headerShown: true}}
       />
-      {/* <Stack.Screen
-        name="CreateAccountScreen"
-        component={CreateAccountScreen}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="LoginScreen"
-        component={LoginScreen}
-        options={{headerShown: false}}
-      /> */}
     </Stack.Navigator>
   );
 };

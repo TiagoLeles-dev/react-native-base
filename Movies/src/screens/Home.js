@@ -43,16 +43,6 @@ export const HomeScreen = ({navigation}) => {
             {moviesArr.map(movie => (
               <MovieCard movie={movie} />
             ))}
-            <Button
-              title="Navigate"
-              style={styles.button}
-              onPress={() => navigation.navigate('NavigationDetails')}
-            />
-            <Button
-              title="Flatlist Example"
-              style={styles.button}
-              onPress={() => navigation.navigate('MovieFlatlist')}
-            />
           </View>
         </ScrollView>
       </View>
@@ -67,7 +57,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   scrollView: {
-    marginBottom: 40,
+    marginBottom: 0,
   },
   sectionTitle: {
     fontSize: 24,
