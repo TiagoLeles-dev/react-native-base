@@ -23,3 +23,14 @@ When it comes to displaying information, lists are widely used in both web and m
 The first and simplest method is using the .map function to generate a component for each item in an array, wrapped in a ScrollView. This approach works well for small lists with limited data in each item.
 
 For larger lists with more data, React Native provides a native component called FlatList. This component leverages the operating system's capabilities to efficiently manage the list, loading and rendering only the necessary data as it becomes visible. This optimizes performance, allowing the app to handle large lists seamlessly. Check out the documentation here for more details and usage examples. 📜📋✨
+
+
+### Part 4 - Tab Navigation
+
+Now that we've built our page with FlatList, and we have multiple screens, navigating through links and buttons alone can become more complex and less intuitive. To address this, let's explore another popular navigation pattern in mobile apps: tab navigation.
+
+Tab navigation allows users to switch between different sections or views of the app by tapping on tabs located at the bottom or top of the screen. This type of navigation can be used in conjunction with stack navigation, where each tab can have its own stack of screens, or the tabs can be part of a single stack.
+
+To implement tab navigation, we'll make use of a popular library called React Navigation. This library provides a simple and intuitive way to set up tab navigation in our React Native app. Check out the [React Navigation documentation](https://reactnavigation.org/docs/tab-based-navigation) for more details on how to get started.
+
+Let's enhance our app's navigation and provide a more user-friendly experience with tab navigation! 🚀🔖📲

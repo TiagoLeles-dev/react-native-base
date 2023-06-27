@@ -84,30 +84,49 @@ Happy coding! 🚀🎬🍿
 
 ### Starting with the basics
 
+### Part 1 - Create Components
+let's dive into some hands-on practice! 💪 We're going to create two components that we can use directly in our App.js file. In the future, we'll create navigation and screens for different parts of the app. The first component will be a header bar, complete with a title . The second component will be a card 🃏, which will have an image , a title , and some text. With these components, we'll be one step closer to building our awesome app! Let's get coding! 💻😄
+
+### Part 2 - Navigation Install and config
+Let's dive into one of the most important parts of mobile development: navigation! In React Native, there's no built-in tool for screen navigation, but fear not, the documentation suggests using React Navigation. 🚀
+
+There are three main types of navigation:
+
+Stack: the most common navigation type, where the system keeps track of the navigated screens in a stack.
+Drawer: navigation done through a side menu, usually accessed by swiping from the edge.
+Bottom Tabs: navigation using visible tabs at the bottom of the screen.
+
+To implement navigation in our project, we'll need to include React Navigation as a dependency and make the necessary configurations. Just follow the instructions in the documentation, and we'll be smoothly navigating between screens in no time! 📚🔍💻
+Firts [Instalation](https://reactnavigation.org/docs/getting-started) Docs.
+
+After following all the instalation steps, follow this link [Stack Docs](https://reactnavigation.org/docs/stack-navigator/) to create and config a new Stack for your app.
+
+### Part 3 - List components
+When it comes to displaying information, lists are widely used in both web and mobile development. In React Native, there are multiple ways to create a list, but let's focus on two popular approaches.
+
+The first and simplest method is using the .map function to generate a component for each item in an array, wrapped in a ScrollView. This approach works well for small lists with limited data in each item.
+
+For larger lists with more data, React Native provides a native component called FlatList. This component leverages the operating system's capabilities to efficiently manage the list, loading and rendering only the necessary data as it becomes visible. This optimizes performance, allowing the app to handle large lists seamlessly. Check out the documentation here for more details and usage examples. 📜📋✨
+
+
+### Part 4 - Tab Navigation
+
+Now that we've built our page with FlatList, and we have multiple screens, navigating through links and buttons alone can become more complex and less intuitive. To address this, let's explore another popular navigation pattern in mobile apps: tab navigation.
+
+Tab navigation allows users to switch between different sections or views of the app by tapping on tabs located at the bottom or top of the screen. This type of navigation can be used in conjunction with stack navigation, where each tab can have its own stack of screens, or the tabs can be part of a single stack.
+
+To implement tab navigation, we'll make use of a popular library called React Navigation. This library provides a simple and intuitive way to set up tab navigation in our React Native app. Check out the [React Navigation documentation](https://reactnavigation.org/docs/tab-based-navigation) for more details on how to get started.
+
+Let's enhance our app's navigation and provide a more user-friendly experience with tab navigation! 🚀🔖📲
+
 <s>
 #### 1. Request an API key
 The API is free and available for everyone to use but to make a request you need to create a user account and then [request an API key](https://www.themoviedb.org/settings/api).
 
-#### 2. Create the home page
-This is the first page the user will see in your application. Here you can have show the 5 [most popular movies](https://developers.themoviedb.org/3/movies/get-popular-movies) as well as an input to allow the user to search by movies using this endpoint: [Movie Search](https://developers.themoviedb.org/3/search/search-movies)
-
-After clicking the search button — and if there is something to search for —, the user should be redirected to another page where the search results will appear (5 for each category is enough).
-
-| 💡 **Useful tip** |
-|:--|
-| At the beginning you can focus on just having a simple input that records the user input and a button that, when clicked, redirects the user to the page `/results?search=user-input`, where you can just show the user input inside a `div`. After that you can increased the complexity by making your requests and showing the results as buttons. That way you can test just the basic structure of your app without having to worry about styles and showing the complete information. |
-
-#### 3. Movie page
-This is the page for the movie. Here you can use the URL params to get the movie ID and show the following:
-* Details: https://developers.themoviedb.org/3/movies/get-movie-details
-
-#### 4. Connecting everything
-Now that we have a specific page for everything we just need to add links so that, in the search results page, when a user clicks a result they are redirected to the specific page.
-
 ### Adding some spice 🌶️
 
 #### 1. Add more search options
-Update the seach input to allow the user to search by TV shows, movies, or people using this endpoint: https://developers.themoviedb.org/3/search/multi-search.
+Create one seach input to allow the user to search by TV shows, movies, or people using this endpoint: https://developers.themoviedb.org/3/search/multi-search.
 
 After clicking the search button — and if there is something to search for —, the user should be redirected to another page where the search results will appear (5 for each category is enough).
 
@@ -126,10 +145,9 @@ This is the page for a person. Here you can use the URL params to get the person
 * TV shows: https://developers.themoviedb.org/3/people/get-person-tv-credits
 * Movies: https://developers.themoviedb.org/3/people/get-person-movie-credits
 
-### Bonus
-<s>As a bonus, and if the rest was too easy for you, you can use the knowledge acquired in the previous steps to deploy your app and show it off.</s> 🚀
+### 🌟 Bonus
+If you found the previous steps too easy and want an extra challenge, why not take it a step further and build and deploy your app? This will give you a chance to showcase your skills and share your creation with others. So go ahead, unleash your creativity, and let your app shine! 🚀
 
 
-## The end
-
-Congratulations! 🎉 You have completed the beginners' guide to React.js. This is the end of this chapter but the beginning of your journey with React.js so feel free to [go back to the start](/README.md) and learn more. After all, it's a never-ending story...
+## 🎉 The end
+Congratulations! 🎉 You have completed the beginner's guide to React Native. This marks the end of this chapter, but it's just the beginning of your journey with React Native. If you want to continue exploring and learning more, feel free to go back to the start and dive deeper into the world of React Native. Remember, it's a never-ending story, and there's always more to discover! So keep coding and enjoy the journey! 😄👨‍💻🚀
