@@ -2,13 +2,14 @@ import {StyleSheet, Text, View, FlatList, RefreshControl} from 'react-native';
 import React, {useState, useMemo} from 'react';
 import {MovieCard} from '../components/MovieCard';
 import moviesJson from '../service/popular_movies_response.json';
+import fetchPopularMovies from '../service/MovieService';
 
 const MovieFlatlist = ({navigation}) => {
   const [refreshing, setRefreshing] = useState(false);
   const [dataList, setDataList] = useState([]);
 
+  //OBS: Using the list from one internal json file.
   useMemo(() => {
-    //Fetch Data from server or API
     setTimeout(() => {
       let list = moviesJson.data.results;
       setDataList(list);
@@ -19,9 +20,11 @@ const MovieFlatlist = ({navigation}) => {
     setRefreshing(true);
     let newData = [];
 
-    setTimeout(() => {
-      newData = moviesJson.data.results;
-    }, 1500);
+    //Fetch Data from server or API
+    let response = await fetchPopularMovies();
+    if (response.results) {
+      setDataList(response.results);
+    }
 
     setRefreshing(false);
     return newData;
