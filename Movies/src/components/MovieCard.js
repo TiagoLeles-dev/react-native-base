@@ -1,9 +1,14 @@
-import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {set} from 'express/lib/response';
+import React, {useState} from 'react';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 export const MovieCard = ({movie}) => {
   const {title, image, details, overview, poster_path} = movie;
   const imagePath = `https://image.tmdb.org/t/p/original${poster_path}`;
+
+  const [isFavorite, setIsFavorite] = useState(false);
+  const iconName = isFavorite ? 'favorite' : 'favorite-outline';
 
   return (
     <View style={styles.container}>
@@ -14,7 +19,12 @@ export const MovieCard = ({movie}) => {
         }}
       />
       <View style={styles.Viewtitle}>
-        <Text style={styles.title}>{title}</Text>
+        <View style={styles.titleViewLine}>
+          <Text style={styles.title}>{title}</Text>
+          <TouchableOpacity onPress={() => setIsFavorite(!isFavorite)}>
+            <MaterialIcons name={iconName} color={'blue'} size={25} />
+          </TouchableOpacity>
+        </View>
         <Text numberOfLines={3} style={styles.text}>
           {details || overview}
         </Text>
@@ -33,6 +43,11 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderRadius: 15,
     backgroundColor: 'rgba(238, 232, 244, 0.4)',
+  },
+  titleViewLine: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginVertical: 5,
   },
   title: {
     color: 'black',
