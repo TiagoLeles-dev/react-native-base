@@ -3,10 +3,22 @@ import React, {useState, useMemo} from 'react';
 import {MovieCard} from '../components/MovieCard';
 import moviesJson from '../service/popular_movies_response.json';
 import fetchPopularMovies from '../service/MovieService';
+import {storage} from '../service/Storage';
 
 const MovieFlatlist = ({navigation}) => {
   const [refreshing, setRefreshing] = useState(false);
   const [dataList, setDataList] = useState([]);
+
+  const saveDataLocaly = async () => {
+    //saving the movie data using the title as key
+    await storage.storeData(dataList[0].title, dataList[0]);
+  };
+
+  const getDataLocaly = async key => {
+    //saving the movie data using the title as key
+    let data = await storage.getData(key);
+    console.log('stored data retrived:', data);
+  };
 
   //OBS: Using the list from one internal json file.
   useMemo(() => {
