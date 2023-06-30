@@ -5,9 +5,16 @@
 2. [Getting Started](#rocket-getting-started)
 3. [Bonus - React and Hooks](#bonusthe-beginners-guide-to-react)
 4. [Important topics](#important-topics-to-have-a-basic-knowledge-of-the-react-native-library)
-5. [React Router](#arrow_right_hook-react-router)
-6. [Authentication](#lock-authentication)
-7. [Build your first app](#technologist-build-your-first-app)
+5. [Build your first app](#🧑‍💻-build-your-first-app-👩‍💻)
+    5-1. [Part 1 - Create Components](#part-1---create-components)
+    5-2. [Part 2 - Navigation Install and config](#part-2---navigation-install-and-config)
+    5-3. [Part 3 - List components](#part-3---list-components)
+    5-4. [Part 4 - Tab Navigation](#part-4---tab-navigation)
+    5-5. [Part 5 - Icons](#part-5---icons)
+    5-6. [Part 6 - Fetching Data](#part-6-🌐-fetching-data-in-react-native)
+    5-7. [Part 7 - Local Data Storage](#part-7-📦-local-data-storage)
+    5-8. [Part 8 - Exploring React Hooks](#part-8-⚓-exploring-react-hooks)
+6. [The end](#🎉-the-end)
 
 <br/>
 
@@ -149,6 +156,57 @@ inside the render
 
 <MaterialCommunityIcons name={'movie-open'} size={22} color={'blue'} />
 ```
+
+### Part 6 🌐 Fetching Data in React Native
+
+Similar to web development, fetching data from a server is a crucial aspect of mobile development. In fact, it's often recommended to store the majority of data and business logic on the backend in mobile apps. This is due to the limited control over the frontend and the different versions used by users. Unlike web, where you can simply update the deployed version, mobile apps require a build process, version upload to the store, review, and then release to end users. However, users can still update their apps whenever they want.
+
+Now, let's dive into the topic of making external data requests in React Native. There are various ways to accomplish this, with popular libraries such as Axios and React Query. For now, let's start with the simplest approach using the built-in fetch method in JavaScript.
+
+Here's an example of using fetch to make a data request:
+
+```
+fetch('https://api.example.com/data')
+  .then((response) => response.json())
+  .then((data) => {
+    // Handle the received data
+    console.log(data);
+  })
+  .catch((error) => {
+    // Handle any errors
+    console.error(error);
+  });
+```
+
+With fetch, you can send HTTP requests to APIs, receive responses, and process the returned data accordingly. Feel free to explore more advanced options and libraries as you become more comfortable with data fetching in React Native. 📡📲
+
+Now it's time to put your knowledge into practice! Try to implement the following task based on what you've learned so far. Don't worry if you can't figure it out completely – you can always refer to the code provided in the repository's branch for reference. Remember, the code is progressive, meaning that the code from Part 1 will be used in Part 2, and so on.
+
+
+### Part 7 📦 Local Data Storage
+
+Just like in web development, it's possible to save some data locally on the user's device in React Native. There are several ways to achieve this, but one of the simplest methods is by using the "react-native-async-storage" library. This library was created by the community as an alternative to the official AsyncStorage component, which is no longer supported.
+
+To install this library, simply follow the instructions provided in the documentation, which can be found at [npmjs.com/package/@react-native-async-storage/async-storage](https://www.npmjs.com/package/@react-native-async-storage/async-storage).
+
+The basic usage of this library is as follows: you can save a string value using a unique key for reference. You can then use the same key to retrieve the stored information or update it.
+
+In our base project, we utilized this option to save the user's favorite movie. We recommend creating a utility class, such as "Storage.js" in the base project, to handle the get and set operations.
+
+Feel free to explore the possibilities of local data storage and enhance your app by persisting user preferences or other relevant information! 📥📤
+
+### Part 8 ⚓ Exploring React Hooks
+Our next stop on this journey will be to utilize and explore the power of React Hooks, which can be used similarly in React Native. If you need a refresher on hooks, feel free to consult the official documentation or the bonus section, which includes a free course on this topic.
+
+Here are some commonly used hooks in React:
+
+- useState: This hook is used to manage the state of a data item. It's important to note that React will automatically update the screen whenever the value of this state changes. 
+
+- useEffect: This hook is frequently used in React Native to load data when a screen is initially rendered. 
+
+- useMemo: Similar to useEffect, this hook allows for cached data management to prevent excessive re-rendering.
+
+By leveraging these hooks, you can enhance the functionality and interactivity of your React Native app. Get ready to dive into the world of hooks and take your app development to the next level! 🚀
 
 
 #### Request an API key
