@@ -63,4 +63,31 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 inside the render
 ...
 
-<MaterialCommunityIcons name={'movie-open'} size={22} color={'blue'} />```
+<MaterialCommunityIcons name={'movie-open'} size={22} color={'blue'} />
+```
+
+### Part 6 
+
+🌐 Fetching Data in React Native
+Similar to web development, fetching data from a server is a crucial aspect of mobile development. In fact, it's often recommended to store the majority of data and business logic on the backend in mobile apps. This is due to the limited control over the frontend and the different versions used by users. Unlike web, where you can simply update the deployed version, mobile apps require a build process, version upload to the store, review, and then release to end users. However, users can still update their apps whenever they want.
+
+Now, let's dive into the topic of making external data requests in React Native. There are various ways to accomplish this, with popular libraries such as Axios and React Query. For now, let's start with the simplest approach using the built-in fetch method in JavaScript.
+
+Here's an example of using fetch to make a data request:
+
+```
+fetch('https://api.example.com/data')
+  .then((response) => response.json())
+  .then((data) => {
+    // Handle the received data
+    console.log(data);
+  })
+  .catch((error) => {
+    // Handle any errors
+    console.error(error);
+  });
+```
+
+With fetch, you can send HTTP requests to APIs, receive responses, and process the returned data accordingly. Feel free to explore more advanced options and libraries as you become more comfortable with data fetching in React Native. 📡📲
+
+Now it's time to put your knowledge into practice! Try to implement the following task based on what you've learned so far. Don't worry if you can't figure it out completely – you can always refer to the code provided in the repository's branch for reference. Remember, the code is progressive, meaning that the code from Part 1 will be used in Part 2, and so on.
