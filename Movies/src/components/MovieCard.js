@@ -1,14 +1,31 @@
-import {set} from 'express/lib/response';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {storageAsync} from '../service/Storage';
 
 export const MovieCard = ({movie}) => {
   const {title, image, details, overview, poster_path} = movie;
   const imagePath = `https://image.tmdb.org/t/p/original${poster_path}`;
+  const movieKey = `${movie.id}`;
 
   const [isFavorite, setIsFavorite] = useState(false);
   const iconName = isFavorite ? 'favorite' : 'favorite-outline';
+
+  useEffect(() => {
+    //Initial check for preveius favorite save
+    const checkOnStore = async () => {
+      let isThisMovieOnFavorite = await storageAsync.getItem(movieKey, false);
+      setIsFavorite(isThisMovieOnFavorite);
+    };
+
+    checkOnStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleFavoriteAction = async () => {
+    await storageAsync.setItem(movieKey, !isFavorite);
+    setIsFavorite(!isFavorite);
+  };
 
   return (
     <View style={styles.container}>
@@ -21,7 +38,7 @@ export const MovieCard = ({movie}) => {
       <View style={styles.Viewtitle}>
         <View style={styles.titleViewLine}>
           <Text style={styles.title}>{title}</Text>
-          <TouchableOpacity onPress={() => setIsFavorite(!isFavorite)}>
+          <TouchableOpacity onPress={handleFavoriteAction}>
             <MaterialIcons name={iconName} color={'blue'} size={25} />
           </TouchableOpacity>
         </View>

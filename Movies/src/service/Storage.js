@@ -1,23 +1,36 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+// <<<----   AsyncStorage  --- >>>>>
 
-export class storage {
-  storeData = async (key, value) => {
+export const storageAsync = {
+  setItem: async (key, item) => {
     try {
-      const jsonValue = JSON.stringify(value);
-      await AsyncStorage.setItem(key, jsonValue);
-    } catch (e) {
-      // saving error
-      console.log('file: Storage.js:9 ~ saving error:', e);
+      await AsyncStorage.setItem(key, JSON.stringify(item));
+    } catch (error) {
+      console.log(error);
     }
-  };
+  },
 
-  getData = async key => {
+  getItem: async (key, defaultValue) => {
     try {
-      const jsonValue = await AsyncStorage.getItem(key);
-      return jsonValue != null ? JSON.parse(jsonValue) : null;
-    } catch (e) {
-      // error reading value
-      console.log('file: Storage.js:19 ~ error reading value:', e);
+      const serializedItem = await AsyncStorage.getItem(key);
+      if (serializedItem) {
+        const parsedItem = JSON.parse(serializedItem);
+        return defaultValue !== undefined && parsedItem === null
+          ? defaultValue
+          : parsedItem;
+      } else {
+        return defaultValue;
+      }
+    } catch (error) {
+      console.log(error);
     }
-  };
-}
+  },
+
+  removeItem: async key => {
+    try {
+      await AsyncStorage.removeItem(key);
+    } catch (error) {
+      console.log(error);
+    }
+  },
+};
