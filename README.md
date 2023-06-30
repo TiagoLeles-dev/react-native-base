@@ -147,7 +147,8 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 inside the render
 ...
 
-<MaterialCommunityIcons name={'movie-open'} size={22} color={'blue'} />```
+<MaterialCommunityIcons name={'movie-open'} size={22} color={'blue'} />
+```
 
 
 #### Request an API key
