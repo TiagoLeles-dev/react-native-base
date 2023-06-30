@@ -3,22 +3,16 @@ import React, {useState, useMemo} from 'react';
 import {MovieCard} from '../components/MovieCard';
 import moviesJson from '../service/popular_movies_response.json';
 import fetchPopularMovies from '../service/MovieService';
-import {storage} from '../service/Storage';
+import getDisplayDate from '../utils/DateUtils';
 
 const MovieFlatlist = ({navigation}) => {
   const [refreshing, setRefreshing] = useState(false);
+  const [dataFetched, setDataFetched] = useState(false);
   const [dataList, setDataList] = useState([]);
 
-  const saveDataLocaly = async () => {
-    //saving the movie data using the title as key
-    await storage.storeData(dataList[0].title, dataList[0]);
-  };
-
-  const getDataLocaly = async key => {
-    //saving the movie data using the title as key
-    let data = await storage.getData(key);
-    console.log('stored data retrived:', data);
-  };
+  const text = dataFetched
+    ? `New Data fetched from server on \n ${getDisplayDate(new Date())}`
+    : `This list is from a internal Json. \n To update from server data drag down the screen`;
 
   //OBS: Using the list from one internal json file.
   useMemo(() => {
@@ -36,6 +30,7 @@ const MovieFlatlist = ({navigation}) => {
     let response = await fetchPopularMovies();
     if (response.results) {
       setDataList(response.results);
+      setDataFetched(true);
     }
 
     setRefreshing(false);
@@ -43,12 +38,16 @@ const MovieFlatlist = ({navigation}) => {
   };
 
   const renderItem = ({item}) => <MovieCard movie={item} />;
+  const renderHeader = () => {
+    return <Text style={styles.textHeader}>{text}</Text>;
+  };
 
   return (
     <View>
       <FlatList
         data={dataList}
         renderItem={renderItem}
+        ListHeaderComponent={renderHeader}
         keyExtractor={item => item.id}
         style={styles.list}
         ListFooterComponent={<View style={styles.footer} />}
@@ -68,6 +67,12 @@ const styles = StyleSheet.create({
   },
   footer: {
     height: 50,
+  },
+  textHeader: {
+    alignSelf: 'center',
+    fontSize: 18,
+    marginTop: 10,
+    paddingHorizontal: 45,
   },
   sectionTitle: {
     fontSize: 24,

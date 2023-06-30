@@ -1,10 +1,7 @@
 import * as React from 'react';
-import {Text, View, Button} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen} from '../screens/Home';
 import MovieFlatlist from '../screens/MovieFlatlist';
-import {MainStackNavigator} from './StackNavigator';
+import {HomeScreen} from '../screens/Home';
 import Examples from '../screens/Examples';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -19,7 +16,7 @@ export default function TabNavigator() {
       }}>
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={MovieFlatlist}
         options={{
           tabBarIcon: ({focused}) => {
             return focused ? (
